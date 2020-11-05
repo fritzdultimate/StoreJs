@@ -18,10 +18,10 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   
   ###### Enough with the talk, let's dig into examples.
   
-  To use StoreJs, you will have to import `storeSetup`
+  To use StoreJs, you will have to import `storeSetup`,
   `storeSetup` accepts an object which contains your data **state, getters, actions, and mutations**
   e.g
-  Javascript```
+  ```JAVASCRIPT
   import { storeSetup } from '/store.js'
   
   let state = () => ({
@@ -60,7 +60,9 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
     getters,
     actions,
     mutations
-  }```
+  }
+  ```
+  
   There is so much thing going on here.
   -- **state** we create our state which holds every data we wants to be shared among our modules...
   -- **getters** holds the property we will be using to retrieve our the data we need from the state, with getters you just get what you need from the state.
@@ -85,18 +87,19 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   
   To use our getter helper to get data of our choice, it's straight forward, just make sure it's in our state.
   
-  Javascript```
+  JAVASCRIPT```
   let get = storeGetters({
       data: "getData",
           age: 'getAge'
       });
      console.log(get)
-     // {age: 20}```
+     // {age: 20}
+     ```
      
   We just got our **age** data from our state, so simple.
   Now lets commit a change to the state, by mutating the value of our age.
   
-  Javascript```
+  JAVASCRIPT```
   storeActions({
       'multiplyAge' : "3"
   })```
@@ -106,7 +109,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   
   We have commited a change to our state, next we will get back our age to see if it mutated.
   
-  Javascript```
+  JAVASCRIPT```
    let get = storeGetters({
       data: "getData",
           age: 'getAge'
