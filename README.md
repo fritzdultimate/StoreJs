@@ -87,35 +87,37 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   
   To use our getter helper to get data of our choice, it's straight forward, just make sure it's in our state.
   
-  JAVASCRIPT```
+  ```JAVASCRIPT
   let get = storeGetters({
       data: "getData",
           age: 'getAge'
       });
      console.log(get)
      // {age: 20}
-     ```
+ ```
      
   We just got our **age** data from our state, so simple.
   Now lets commit a change to the state, by mutating the value of our age.
   
-  JAVASCRIPT```
+  ```JAVASCRIPT
   storeActions({
       'multiplyAge' : "3"
-  })```
+  })
+  ```
   
   The above is how we call our action method, the key been the action method while the value is our arguments. Again, the list of argument is a string which can be seperated by
   "pipe" => `|`, again you can pass as many as you like e.g `method: '3|fritz|4|path'` which is equivalent to `function method(3, 'fritz', 4, 'path')`
   
   We have commited a change to our state, next we will get back our age to see if it mutated.
   
-  JAVASCRIPT```
+  ```JAVASCRIPT
    let get = storeGetters({
       data: "getData",
           age: 'getAge'
    });
    console.log(get)
-   // {age: 60}```
+   // {age: 60}
+   ```
 
 
 Yea It got mutated, so our state can now be get and changed.
