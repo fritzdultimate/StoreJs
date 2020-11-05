@@ -68,9 +68,9 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   ```
   
   There is so much thing going on here.<br>
-  -- **state** we create our state which holds every data we wants to be shared among our modules...
-  -- **getters** holds the property we will be using to retrieve our the data we need from the state, with getters you just get what you need from the state.
-  -- **actions** with actions, we just have commit changes to the state through mutation.
+  -- **state** we create our state which holds every data we wants to be shared among our modules...<br><br>
+  -- **getters** holds the property we will be using to retrieve our the data we need from the state, with getters you just get what you need from the state.<br><br>
+  -- **actions** with actions, we just have commit changes to the state through mutation.<br><br>
   -- **mutation** this is where your main code goes, e.g, you need to do some checking or data manipulation.
   
   ##### Note
@@ -137,7 +137,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
 
 Yea It got mutated, so our state can now be get and changed.
 
-**StoreJs is aimed to make sharing data across your project a bliss**, 
+**StoreJs is aimed to make sharing data across your project a bliss**, <br>
 **Fork it lets't make it more powerful**
      
   
