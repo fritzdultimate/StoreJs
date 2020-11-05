@@ -72,7 +72,8 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   
   In the action, you just have to return a valid mutation property, where the key is "method" and the arguments to be passed to the method as key "arguments".
   e.g 
-  ```JAVASCRIPT{method: mutationValidProperty, arguments: "...args"}
+  ```JAVASCRIPT
+    {method: mutationValidProperty, arguments: "...args"}
   ```
   As you may have noticed, `arguments` is a string, you can pass many argument as you want, just seperate each one with "pipe" => `|`
   
@@ -96,10 +97,10 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
           age: 'getAge'
       });
      console.log(get)
-     // {age: 20}
+     // {age: 20, data: {name: "emeka"}}
  ```
      
-  We just got our **age** data from our state, so simple.
+  We just got our **age** and **data** obj dataa from our state, so simple.
   Now lets commit a change to the state, by mutating the value of our age.
   
   ```JAVASCRIPT
@@ -111,18 +112,17 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   The above is how we call our action method, the key been the action method while the value is our arguments. Again, the list of argument is a string which can be seperated by
   "pipe" => `|`, again you can pass as many as you like e.g 
   ```JAVASCRIPT 
-  method: '3|fritz|4|path'
+  method: '3|fritz|4|noble'
   ``` 
   which is equivalent to 
   ```JAVASCRIPT 
-  function method(3, 'fritz', 4, 'path')
+  function method(3, 'fritz', 4, 'noble')
   ```
   
-  We have commited a change to our state, next we will get back our age to see if it mutated.
+  We have commited a change to our state, next we will get back our age to see if it will mutate.
   
   ```JAVASCRIPT
    let get = storeGetters({
-      data: "getData",
           age: 'getAge'
    });
    console.log(get)
@@ -132,7 +132,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
 
 Yea It got mutated, so our state can now be get and changed.
 
-**StoreJs is aimed to make sharing data across your project a bliss**
+**StoreJs is aimed to make sharing data across your project a bliss**, 
 **Fork it lets't make it more powerful**
      
   
