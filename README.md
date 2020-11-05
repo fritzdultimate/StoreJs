@@ -72,7 +72,9 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   ##### Note
   
   In the action, you just have to return a valid mutation property, where the key is "method" and the arguments to be passed to the method as key "arguments".
-  e.g `{method: mutationValidProperty, arguments: "...args"}`
+  e.g 
+  ```JAVASCRIPT{method: mutationValidProperty, arguments: "...args"}
+  ```
   As you may have noticed, `arguments` is a string, you can pass many argument as you want, just seperate each one with "pipe" => `|`
   
   Mutations accepts two parameter
@@ -81,7 +83,9 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   ###### Finally - Very Important.
   
   to be able to use our getters, and actions, we will import the helper functions Asap!.
-  `import {storeGetters, storeActions} from '/store.js'`
+  ```JAVASCRIPT
+  import {storeGetters, storeActions} from '/store.js'
+  ```
   
   We have imported our helpers, now we can go ahead and use them.
   
@@ -106,7 +110,14 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   ```
   
   The above is how we call our action method, the key been the action method while the value is our arguments. Again, the list of argument is a string which can be seperated by
-  "pipe" => `|`, again you can pass as many as you like e.g `method: '3|fritz|4|path'` which is equivalent to `function method(3, 'fritz', 4, 'path')`
+  "pipe" => `|`, again you can pass as many as you like e.g 
+  ```JAVASCRIPT 
+  method: '3|fritz|4|path'
+  ``` 
+  which is equivalent to 
+  ```JAVASCRIPT 
+  function method(3, 'fritz', 4, 'path')
+  ```
   
   We have commited a change to our state, next we will get back our age to see if it mutated.
   
