@@ -11,7 +11,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   in such case, it may become hard to share data across all the modules, that is where **StoreJs** comes handy.
   
   ##### Who should use StoreJs?
-  everyone!.
+  everyone! Any developer who wants to implement a shared data across app.
   
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
