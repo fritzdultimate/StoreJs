@@ -60,6 +60,11 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
     actions,
     mutations
   }
+
+  storeSetup({
+      // register our state managers
+      store
+  })
   ```
   
   There is so much thing going on here.
