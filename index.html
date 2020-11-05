@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreJs</title>
+</head>
+<body>
+    <script type="module" src="store.js"></script>
+    <script type="module">
+        import {storeSetup, storeGetters, storeActions} from '/store.js'
+        let state = () => ({
+            data: {
+                name: 'emeka'
+            },
+            age: 20
+        });
+
+        let getters = {
+            getData: (state) => {
+                return state.data;
+            },
+            getAge: (state) => {
+                return state.age;
+            }
+        }
+
+        let actions = {
+            multiplyAge: () => {
+                return {
+                    method: 'text',
+                    arguments: 'first|second|third'
+                }
+            },
+        }
+
+        let mutations = {
+            text: (state, { first }) => {
+                state.age *= first;
+            }
+        }
+
+        let store = {
+            state,
+            getters,
+            actions,
+            mutations
+        };
+
+        storeSetup({
+            store
+        })
+        let get = storeGetters({
+            data: "getData",
+            age: 'getAge'
+        });
+        console.log(get)
+        // age == 20
+
+        let act = storeActions({
+            'multiplyAge' : "3"
+        })
+
+        let ge = storeGetters({
+            age: 'getAge'
+        });
+
+        console.log(ge)
+        // age = 60
+
+    </script>
+</body>
+</html>
