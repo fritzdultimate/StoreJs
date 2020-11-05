@@ -78,7 +78,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   In the action, you just have to return a valid mutation property, where the key is "method" and the arguments to be passed to the method as key "arguments".
   e.g 
   ```JAVASCRIPT
-    {method: mutationValidProperty, arguments: "...args"}
+    { method: mutationValidProperty, arguments: "...args" }
   ```
   As you may have noticed, `arguments` is a string, you can pass many argument as you want, just seperate each one with "pipe" => `|`
   
