@@ -29,14 +29,15 @@
             multiplyAge: () => {
                 return {
                     method: 'text',
-                    arguments: 'first|second|third'
+                    arguments: 'payload'
                 }
             },
         }
 
         let mutations = {
-            text: (state, { first }) => {
-                state.age *= first;
+            text: (state, {payload}) => {
+                state.age *= payload.first;
+                state.age /= payload.second
             }
         }
 
@@ -51,13 +52,14 @@
             store
         })
         let get = storeGetters({
+            data: "getData",
             age: 'getAge'
         });
         console.log(get)
-        // age == 20
+        // age == 20, data == {name: 'emeka'}
 
         let act = storeActions({
-            'multiplyAge' : "3"
+            'multiplyAge' : { first:30, second: 2 }
         })
 
         let ge = storeGetters({
@@ -65,7 +67,7 @@
         });
 
         console.log(ge)
-        // age = 60
+        // 300
 
     </script>
 </body>

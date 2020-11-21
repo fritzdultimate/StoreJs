@@ -58,16 +58,16 @@ function storeActions(actions) {
                 }
                 let action = $__Store.store.actions[property];
                 $_actions[Object.entries(actions)[i][1]] = action;
-                let parameters_values = Object.entries(actions)[i][1].split('|');
-                let parameter = action().arguments.split('|');
+                let parameters_values = Object.entries(actions)[i][1];
+                let parameter = action().arguments;
                 let obj = {};
-                for(let i = 0; i < parameter.length; i++) {
-                    if(parameters_values[i]) {
-                        obj[parameter[i]] = parameters_values[i];
-                    }
-                }
+                Object.defineProperty(obj, parameter, {
+                    value: parameters_values,
+                    writable: false,
+                    enumerable: true
+                });
+                // parameter = parameters_values
                 let method = action().method;
-
                 let a = commit.call(null, method,  obj );
             }
         } catch(e) {
