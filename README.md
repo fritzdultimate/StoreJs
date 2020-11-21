@@ -1,6 +1,6 @@
 # StoreJs - lightweight State management lib.
 
-
+__Updated__
 **WIP**
 
 ### What is StoreJs?
@@ -43,14 +43,15 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
       multiplyAge: () => {
           return {
               method: 'text',
-              arguments: 'first|second|third'
+              arguments: 'payload'
           }
       },
   }
 
   let mutations = {
-      text: (state, { first }) => {
-          state.age *= first;
+      text: (state, { payload }) => {
+          state.age *= payload.first;
+          state.age /= payload.second;
       }
   }
   
@@ -78,12 +79,12 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   In the action, you just have to return a valid mutation property, where the key is "method" and the arguments to be passed to the method as key "arguments".
   e.g 
   ```JAVASCRIPT
-    { method: mutationValidProperty, arguments: "...args" }
+    { method: mutationValidProperty, arguments: "payload" }
   ```
-  As you may have noticed, `arguments` is a string, you can pass many argument as you want, just seperate each one with "pipe" => `|`
+  As you may have noticed, `arguments` is a string, you can only pass one argument`
   
   Mutations accepts two parameter
-  1. the state, 2. object of arguments passed earlier.
+  1. the state, 2. the payload variable.
   
   ###### Finally - Very Important.
   
@@ -109,19 +110,22 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
   Now lets commit a change to the state, by mutating the value of our age.
   
   ```JAVASCRIPT
+  let obj = {
+      first: 30,
+      second: 2
+  }
   storeActions({
-      'multiplyAge' : "3"
+      'multiplyAge' : obj
   })
   ```
   
-  The above is how we call our action method, the key been the action method while the value is our arguments. Again, the list of argument is a string which can be seperated by
-  "pipe" => `|`, again you can pass as many as you like e.g 
+  The above is how we call our action method, the key been the action method while the value is our arguments. Again, the argument mus be an object to be passed to our actions.
   ```JAVASCRIPT 
-  method: '3|fritz|4|noble'
+  method: {prop: key}
   ``` 
   which is equivalent to 
   ```JAVASCRIPT 
-  function method(3, 'fritz', 4, 'noble')
+  function method({prop: key})
   ```
   
   We have commited a change to our state, next we will get back our age to see if it will mutate.
@@ -131,7 +135,7 @@ _StoreJs_ is a Javascript lightweight library for shared state management.
           age: 'getAge'
    });
    console.log(get)
-   // {age: 60}
+   // {age: 300}
    ```
 
 
@@ -140,5 +144,5 @@ Yea It got mutated, so our state can now be get and changed.
 **StoreJs is aimed to make sharing data across your project a bliss**, <br>
 **Fork it lets't make it more powerful**
      
-  
+  *!Hoolay*
   
